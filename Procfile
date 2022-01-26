@@ -1,1 +1,1 @@
-web: gunicorn bingBook.wsgi
+web: gunicorn bingoBook.wsgi
