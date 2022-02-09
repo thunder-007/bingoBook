@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - HARSHA</title>
+    <link rel="icon" href=
+            "{% static 'devpage/img/akatsukiLogo.png' %}"
+          type="image/x-icon">
     <link rel="stylesheet" href="{% static 'devpage/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'devpage/bootstrap/css/GFontCatamaran.css' %}">
     <link rel="stylesheet" href="{% static 'devpage/bootstrap/css/GFontLato.css' %}">
@@ -14,16 +17,22 @@
 
 <body>
 <nav class="navbar navbar-dark navbar-expand-lg bg-dark navbar-custom">
-    <div class="container"><a class="navbar-brand" style="font-family: Garuda;font-size: large" href="{% url 'index' %}"><img
-            src="{% static 'devpage/img/akatsuki.jpg' %}" width="30" height="30" class="d-inline-block align-top"
+    <div class="container"><a class="navbar-brand" style="font-family: Garuda;font-size: large"
+                              href="{% url 'index' %}"><img
+            src="{% static 'devpage/img/akatsukiLogo.png' %}" width="30" height="30" class="d-inline-block align-top"
             alt="logo"> HARSHA</a>
         <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span
                 class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="btn nav-item {% block aboutActive %}{% endblock %}"><a class="nav-link {% block aboutText %}{% endblock %}" href="{% url 'index' %}"> Know me</a></li>
-                <li class="btn nav-item {% block projectsActive %}{% endblock %}"><a class="nav-link {% block projectsText %}{% endblock %}" href="{% url 'projects' %}">Projects</a></li>
-                <li class="btn nav-item {% block contactActive %}{% endblock %}"><a class="nav-link {% block contactText %}{% endblock %}" href="{% url 'contact' %}">Contact</a></li>
+                <li class="btn nav-item {% block aboutActive %}{% endblock %}"><a
+                        class="nav-link {% block aboutText %}{% endblock %}" href="{% url 'index' %}"> Know me</a></li>
+                <li class="btn nav-item {% block projectsActive %}{% endblock %}"><a
+                        class="nav-link {% block projectsText %}{% endblock %}" href="{% url 'projects' %}">Projects</a>
+                </li>
+                <li class="btn nav-item {% block contactActive %}{% endblock %}"><a
+                        class="nav-link {% block contactText %}{% endblock %}" href="{% url 'contact' %}">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
