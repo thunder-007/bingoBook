@@ -7,140 +7,185 @@
     text-black
 {% endblock %}
 {% block content %}
-<header class="text-center text-white masthead">
-    <div class="masthead-content">
+    <style>
+        .scroller {
+            height: 1.2em;
+            line-height: 1.2em;
+            position: relative;
+            overflow: hidden;
+            width: 10em;
+        }
+
+        .scroller > span {
+            position: absolute;
+            top: 0;
+            animation: slide 5s infinite;
+            font-weight: bold;
+
+        }
+
+        @keyframes slide {
+            0% {
+                top: 0;
+            }
+            25% {
+                top: -1.2em;
+            }
+            50% {
+                top: -2.4em;
+            }
+            75% {
+                top: -3.6em;
+            }
+        }
+
+    </style>
+    <header class="text-center text-white masthead">
+        <div class="masthead-content">
+            <div class="container">
+                <h1 class="masthead-heading mb-0">Harsha Vardhan</h1>
+                <!--h2 class="masthead-subheading mb-0">Engineer</h2-->
+                <div class="scroller masthead-subheading mb-0">
+                    <span>
+                        Engineer<br/>
+                        Genius<br/>
+                        Developer<br/>
+                        Techie<br/>
+                    </span>
+                </div>
+                <br>
+                <!--a class="btn" href="#about">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                         class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg>
+                </a-->
+            </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+    </header>
+    <section id="about">
         <div class="container">
-            <h1 class="masthead-heading mb-0">Harsha Vardhan</h1>
-            <h2 class="masthead-subheading mb-0">Engineer</h2>
             <br>
-            <a class="btn" href="#about">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
-                     class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-    <div class="bg-circle-1 bg-circle"></div>
-    <div class="bg-circle-2 bg-circle"></div>
-    <div class="bg-circle-3 bg-circle"></div>
-    <div class="bg-circle-4 bg-circle"></div>
-</header>
-<section id="about">
-    <div class="container">
-        <br>
-        <div class="row align-items-center">
-            <h1 class="animate-charcter py-5 my-5">
-                Know me
-            </h1>
-        </div>
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="rounded-circle img-fluid" src="{% static 'devpage/img/NarutoUzumaki.jpg' %}">
-                </div>
+            <div class="row align-items-center">
+                <h1 class="animate-charcter py-5 my-5">
+                    Know me
+                </h1>
             </div>
-
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">Schooling</h2>
-                    <br>
-                    <ul>
-                        <li><h6>Viswa Bharathi , Srikalahasthi - Till 4th</h6></li>
-                        <li><h6>The school , Srikalahasthi - 5th class</h6></li>
-                        <li><h6>
-                            Avr , Srikalahasthi - 6th class
-                        </h6></li>
-                        <li><h6>
-                            Keshava reddy , Tirupathi - 7th,8th class
-                        </h6>
-                        </li>
-                        <li><h6>
-                            Srichaitanya ,Tirupathi - 9th class
-                        </h6>
-                        </li>
-                        <li><h6>
-                            Srichaitanya , Srikalahasthi - 10th class
-                        </h6>
-                        </li>
-                    </ul>
-                    <br>
-                    <h1>
-                        Score
-                    </h1>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
-                             style="width: 90%"
-                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid"
+                                          src="{% static 'devpage/img/NarutoUzumaki.jpg' %}">
                     </div>
-
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5"><img class="rounded-circle img-fluid"
-                                      src="{% static 'devpage/img/Ben10AlienForce.jpg' %}" style="height: 600px"></div>
-            </div>
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5">
-                    <h2 class="display-4">Intermediate</h2>
-                    <ul>
-                        <li><h6>1st year - NRI Avilala campus , tirupathi</h6></li>
-                        <li><h6>2nd year - NRI New balaji nagar campus , tirupathi</h6></li>
-                    </ul>
-                    <br>
 
-                    <h1>
-                        Score
-                    </h1>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
-                             role="progressbar" style="width: 87%"
-                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">Schooling</h2>
+                        <br>
+                        <ul>
+                            <li><h6>Viswa Bharathi , Srikalahasthi - Till 4th</h6></li>
+                            <li><h6>The school , Srikalahasthi - 5th class</h6></li>
+                            <li><h6>
+                                Avr , Srikalahasthi - 6th class
+                            </h6></li>
+                            <li><h6>
+                                Keshava reddy , Tirupathi - 7th,8th class
+                            </h6>
+                            </li>
+                            <li><h6>
+                                Srichaitanya ,Tirupathi - 9th class
+                            </h6>
+                            </li>
+                            <li><h6>
+                                Srichaitanya , Srikalahasthi - 10th class
+                            </h6>
+                            </li>
+                        </ul>
+                        <br>
+                        <h1>
+                            Score
+                        </h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                                 role="progressbar"
+                                 style="width: 90%"
+                                 aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="rounded-circle img-fluid" src="{% static 'devpage/img/4thHokage.png' %}"
-                                      style="opacity: 1;filter: brightness(100%) contrast(124%);"></div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="p-5">
-                    <h2 class="display-4">B.Tech - AI</h2>
-                    <ul>
-                        <li><h6>RMKCET Puduvoyal </h6></li>
-                    </ul>
-                    <br>
-
-                    <h1>
-                        Semster 1
-                    </h1>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
-                             role="progressbar" style="width: 73%"
-                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5"><img class="rounded-circle img-fluid"
+                                          src="{% static 'devpage/img/Ben10AlienForce.jpg' %}" style="height: 600px">
                     </div>
-                    <h1>
-                        Semster 2
-                    </h1>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
-                             role="progressbar" style="width: 76%"
-                             aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5">
+                        <h2 class="display-4">Intermediate</h2>
+                        <ul>
+                            <li><h6>1st year - NRI Avilala campus , tirupathi</h6></li>
+                            <li><h6>2nd year - NRI New balaji nagar campus , tirupathi</h6></li>
+                        </ul>
+                        <br>
+
+                        <h1>
+                            Score
+                        </h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-success progress-bar-animated"
+                                 role="progressbar" style="width: 87%"
+                                 aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid"
+                                          src="{% static 'devpage/img/4thHokage.png' %}"
+                                          style="opacity: 1;filter: brightness(100%) contrast(124%);"></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">B.Tech - AI</h2>
+                        <ul>
+                            <li><h6>RMKCET Puduvoyal </h6></li>
+                        </ul>
+                        <br>
+
+                        <h1>
+                            Semster 1
+                        </h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
+                                 role="progressbar" style="width: 73%"
+                                 aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h1>
+                            Semster 2
+                        </h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
+                                 role="progressbar" style="width: 76%"
+                                 aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
