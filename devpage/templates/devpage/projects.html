@@ -56,8 +56,8 @@
                                     <h6 class="text-center">
                                         {{ project.projectTitle }}
                                     </h6>
-                                    <br>
                                     <p class="card-text">{{ project.desc }}</p>
+                                    <span class="badge rounded-pill bg-{{ project.tags.color }} mb-3">{{ project.tags.text }}</span>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-warning btn-outline-secondary"><a
@@ -66,6 +66,7 @@
                                         </div>
                                         <small class="text-muted">{{ project.created_at }}</small>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

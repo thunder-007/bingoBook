@@ -5,7 +5,7 @@ def index(request):
     return render(request, 'devpage/index.html')
 
 def projects(request):
-    Projects = Project.objects.all()
+    Projects = Project.objects.filter(show = True)
     return render(request, 'devpage/projects.html',{'Projects': Projects})
 
 def contact(request):
