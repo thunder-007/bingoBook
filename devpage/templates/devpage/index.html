@@ -8,6 +8,31 @@
 {% endblock %}
 {% block content %}
     <style>
+        /* skills css */
+        .box {
+            width: 100%;
+        }
+
+        .box h2 {
+            display: block;
+            text-align: center;
+            color: #171515;
+        }
+
+        .box .chart {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 40px;
+            line-height: 160px;
+            height: 160px;
+            color: #c92424;
+        }
+
+
+        /* skills css end */
+
         .scroller {
             height: 1.2em;
             line-height: 1.2em;
@@ -87,7 +112,7 @@
 
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4" style="font-family: 'Ubuntu Mono'">Schooling</h2>
+                        <h2 class="display-4" style="font-family: inherit">Schooling</h2>
                         <br>
                         <ul>
                             <li><h6>Viswa Bharathi , Srikalahasthi - Till 4th</h6></li>
@@ -134,7 +159,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-2">
                     <div class="p-5">
-                        <h2 class="display-4" style="font-family: 'Ubuntu Mono'">Intermediate</h2>
+                        <h2 class="display-4" style="font-family: inherit">Intermediate</h2>
                         <ul>
                             <li><h6>1st year - NRI Avilala campus , tirupathi</h6></li>
                             <li><h6>2nd year - NRI New balaji nagar campus , tirupathi</h6></li>
@@ -164,7 +189,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4" style="font-family: 'Ubuntu Mono'">B.Tech - AI</h2>
+                        <h2 class="display-4" style="font-family: inherit">B.Tech - AI</h2>
                         <ul>
                             <li><h6>RMKCET Puduvoyal </h6></li>
                         </ul>
@@ -191,4 +216,50 @@
             </div>
         </div>
     </section>
+    <section>
+    <h1 class="text-center my-5" style="font-family: Courier">
+                    Programming Languages
+                </h1>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"
+                charset="utf-8"></script>
+        <div class="container my-5">
+                <div class="row text-center">
+                    <div class="box col">
+                        <div class="chart" data-percent="87"></div>
+                        <h2>Python</h2>
+                    </div>
+                    <div class="box col">
+                        <div class="chart" data-percent="80"></div>
+                        <h2>C</h2>
+                    </div>
+                    <div class="box col">
+                        <div class="chart" data-percent="75"></div>
+                        <h2> Java</h2>
+                    </div>
+                    <div class="box col">
+                        <div class="chart" data-percent="65"></div>
+                        <h2>C++</h2>
+                    </div>
+                    <div class="box col">
+                        <div class="chart" data-percent="40"></div>
+                        <h2>Kotlin</h2>
+                    </div>
+                </div>
+            </div>
+        <script type="text/javascript">
+            $(function () {
+                $('.chart').easyPieChart({
+                    size: 160,
+                    barColor: "#36e617",
+                    scaleLength: 0,
+                    lineWidth: 15,
+                    trackColor: "#525151",
+                    lineCap: "circle",
+                    animate: 2000,
+                });
+            });
+        </script>
+    </section>
+
 {% endblock %}
