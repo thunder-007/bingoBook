@@ -2,7 +2,8 @@ from django.shortcuts import render
 from . models import Project,contactForm,Contact
 # Create your views here.
 def index(request):
-    return render(request, 'devpage/index.html')
+    pinnedProjects = Project.objects.filter(pin = True)[:3]
+    return render(request, 'devpage/index.html',{'Projects':pinnedProjects})
 
 def projects(request):
     Projects = Project.objects.filter(show = True)

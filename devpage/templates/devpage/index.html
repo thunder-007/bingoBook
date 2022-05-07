@@ -154,7 +154,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5"><img class="img-fluid"
-                                          src="{% static 'devpage/img/kakashi-hatake.png' %}" style="height: 600px ; border-radius: 0">
+                                          src="{% static 'devpage/img/kakashi-hatake.png' %}"
+                                          style="height: 600px ; border-radius: 0">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-2">
@@ -203,6 +204,7 @@
                                  role="progressbar" style="width: 73%"
                                  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
+                        <br>
                         <h1>
                             Semster 2
                         </h1>
@@ -211,42 +213,51 @@
                                  role="progressbar" style="width: 76%"
                                  aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
+                        <br>
+                        <h1>
+                            Semster 3
+                        </h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated"
+                                 role="progressbar" style="width: 85%"
+                                 aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section>
-    <h1 class="text-center my-5" style="font-family: Courier">
-                    Programming Languages
-                </h1>
+        <h1 class="text-center my-5" style="font-family: Courier">
+            Programming Languages
+        </h1>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"
                 charset="utf-8"></script>
         <div class="container my-5">
-                <div class="row text-center">
-                    <div class="box col">
-                        <div class="chart" data-percent="87"></div>
-                        <h2>Python</h2>
-                    </div>
-                    <div class="box col">
-                        <div class="chart" data-percent="80"></div>
-                        <h2>C</h2>
-                    </div>
-                    <div class="box col">
-                        <div class="chart" data-percent="75"></div>
-                        <h2> Java</h2>
-                    </div>
-                    <div class="box col">
-                        <div class="chart" data-percent="65"></div>
-                        <h2>C++</h2>
-                    </div>
-                    <div class="box col">
-                        <div class="chart" data-percent="40"></div>
-                        <h2>Bash</h2>
-                    </div>
+            <div class="row text-center">
+                <div class="box col">
+                    <div class="chart" data-percent="87"></div>
+                    <h2>Python</h2>
+                </div>
+                <div class="box col">
+                    <div class="chart" data-percent="80"></div>
+                    <h2>C</h2>
+                </div>
+                <div class="box col">
+                    <div class="chart" data-percent="75"></div>
+                    <h2> Java</h2>
+                </div>
+                <div class="box col">
+                    <div class="chart" data-percent="65"></div>
+                    <h2>C++</h2>
+                </div>
+                <div class="box col">
+                    <div class="chart" data-percent="40"></div>
+                    <h2>Bash</h2>
                 </div>
             </div>
+        </div>
         <script type="text/javascript">
             $(function () {
                 $('.chart').easyPieChart({
@@ -261,5 +272,54 @@
             });
         </script>
     </section>
+    <section>
+        <h1 class="text-center my-5" style="font-family: Courier">
+            Pinned Projects
+        </h1>
+        <div class="container">
+            <div class="row justify-content-center align-items-center text-center mx-auto ">
+                {% for project in Projects %}
+                    <div class="col-md-4 py-2  d-flex justify-content-center">
+                        <div class="card shadow-sm">
+                            <img src="{{ project.projectTemplate.url }}" height="225" width="100%">
+                            <div class="card-body">
+                                <h6 class="text-center">
+                                    {{ project.projectTitle }}
+                                </h6>
+                                <p class="card-text">{{ project.desc }}</p>
+                                <span class="badge rounded-pill bg-{{ project.tags.color }} mb-3">{{ project.tags.text }}</span>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-warning btn-outline-secondary"><a
+                                                href="{% url 'projects' %}" target="_blank" type="button"
+                                                class="btn">View</a></button>
+                                    </div>
+                                    <small class="text-muted">{{ project.created_at }}</small>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <h1 class="text-center">
+            <button class="btn btn-danger">
+                View All
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </svg>
+            </button>
+        </h1>
+    </section>
+    <br>
+    <section>
+    <div class="text-center">
+        <h3 class="my-5">
+            Under Construction .... Feel free to contribute visit github for more info
+        </h3>
+    </div>
+    </section>
 {% endblock %}
