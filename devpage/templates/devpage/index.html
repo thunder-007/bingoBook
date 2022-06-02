@@ -63,7 +63,6 @@
                 top: -3.6em;
             }
         }
-
     </style>
     <header class="text-center text-white masthead">
         <div class="masthead-content">
@@ -253,6 +252,10 @@
                     <h2>C++</h2>
                 </div>
                 <div class="box col">
+                    <div class="chart" data-percent="50"></div>
+                    <h2>JavaScript</h2>
+                </div>
+                <div class="box col">
                     <div class="chart" data-percent="40"></div>
                     <h2>Bash</h2>
                 </div>
@@ -305,7 +308,7 @@
         </div>
         <h1 class="text-center">
             <button class="btn btn-danger">
-                View All
+                <a href="{% url 'projects' %}" class="btn" style="color: white"> View All</a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                      class="bi bi-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
