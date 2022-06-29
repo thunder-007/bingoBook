@@ -148,4 +148,12 @@ cloudinary.config(
   api_key = os.environ["CLOUDINARY_API_KEY"],
   api_secret = os.environ["CLOUDINARY_API_SECRET"]
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ['BOT_EMAIL']
+EMAIL_HOST_PASSWORD = os.environ['BOT_PASSWORD']
+
 django_heroku.settings(locals())

@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from . models import Project,contactForm,Contact
+from django.conf import settings
+from django.core.mail import send_mail
+from django.contrib.auth.models import User
+import threading
+
 # Create your views here.
 def index(request):
     pinnedProjects = Project.objects.filter(pin = True)[:3]
@@ -17,13 +22,18 @@ def contact(request):
             email = request.POST['email']
             phone = request.POST['phone']
             concern = request.POST['desc']
-            print(name, email, phone, concern)
             contactObj = Contact(name=name, email=email, phone=phone, desc=concern)
             contactObj.save()
-            form = contactForm()
-            return render(request, 'devpage/contact.html', {'form': form, 'submitted': True, 'try': True})
-        else:
-            form = contactForm()
-            return render(request, 'devpage/contact.html', {'form': form, 'submitted': False, 'try': True})
+            subject = f'Hi Harsha you got a message from {name}'
+            message = f'phone: {phone}\nemail: {email}\nconcern: {concern}'
+            email_from = settings.EMAIL_HOST_USER
+            admin_user_emails = list(User.objects.filter(is_superuser=True).values_list('email', flat=True))
+            mailThread = threading.Thread(target=send_mail, args=(subject, message, email_from, admin_user_emails,))
+            mailThread.start()
+            # form = contactForm()
+            # return render(request, 'devpage/contact.html', {'form': form, 'success': True})
+        # else:
+            # form = contactForm()
+            # return render(request, 'devpage/contact.html', {'form': form, 'success': False})
     form = contactForm()
-    return render(request, 'devpage/contact.html',{'form': form, 'submitted': False, 'Failed': False})
+    return render(request, 'devpage/contact.html',{'form': form})
