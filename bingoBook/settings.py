@@ -61,8 +61,10 @@ ROOT_URLCONF = 'bingoBook.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [
+            BASE_DIR / 'templates',
+            BASE_DIR / 'bingoreact/build'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,4 +158,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ['BOT_EMAIL']
 EMAIL_HOST_PASSWORD = os.environ['BOT_PASSWORD']
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'bingoreact/build/static',
+]
 django_heroku.settings(locals())
